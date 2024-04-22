@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.Instant;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 import com.polieduca.br.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
