@@ -10,13 +10,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-
-// Serializable: serve para transformar os objetos...
-// em cadeias de bits, para que os objetos trafeguem na...
-// rede, possa ser gravados em arquivo, etc.
-public class User implements Serializable{
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -24,7 +20,7 @@ public class User implements Serializable{
 	private String email;
 	private String phone;
 	private String password;
-	
+
 	public User() {
 	}
 
@@ -101,9 +97,4 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
 }
