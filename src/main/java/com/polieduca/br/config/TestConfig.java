@@ -43,8 +43,8 @@ public class TestConfig implements CommandLineRunner {
 		Product p1 = new Product(null, "Democracia: Conceitos e Princípios", "Um guia abrangente sobre os princípios fundamentais da democracia e seu papel na sociedade moderna.", 49.99, "", true);
 		Product p2 = new Product(null, "Política para Iniciantes: Um Curso Prático", "Aprenda os conceitos básicos da política de uma forma acessível e descomplicada, com exemplos do dia a dia.", 29.99, "", false);
 		Product p3 = new Product(null, "Estrutura e Funcionamento do Estado", "Este curso explora a organização e o funcionamento do Estado, incluindo os poderes Executivo, Legislativo e Judiciário.", 39.99, "", false);
-		Product p4 = new Product(null, "Democracia", "Um regime político no qual o poder é exercido pelo povo, seja diretamente ou por meio de representantes eleitos.", 0.0, "", true);
-		Product p5 = new Product(null, "MST", "Movimento dos Trabalhadores Rurais Sem Terra: um movimento social que luta pela reforma agrária e pela justiça social no campo.", 0.0, "", true);
+		Product p4 = new Product(null, "Democracia", "Um curso que buscará explicar o regime político no qual o poder é exercido pelo povo, seja diretamente ou por meio de representantes eleitos.", 0.0, "", true);
+		Product p5 = new Product(null, "Glossario", "Seção dedicada a explicar de forma clara e simples os termos políticos e cívicos essenciais.", 0.0, "", true);
 		Product p6 = new Product(null, "Noticias Diarias", "True News", 0.0, "", true);
 
 		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");
@@ -58,5 +58,14 @@ public class TestConfig implements CommandLineRunner {
 		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+		
+		p1.getCategories().add(cat1);
+		p2.getCategories().add(cat1);
+		p3.getCategories().add(cat4);
+		p4.getCategories().add(cat4);
+		p5.getCategories().add(cat2);
+		p6.getCategories().add(cat3);
+		
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6));
 	}
 }
